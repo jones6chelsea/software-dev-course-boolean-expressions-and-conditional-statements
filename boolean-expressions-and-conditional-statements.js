@@ -28,9 +28,11 @@ const readline = require('readline-sync');
 
 const hasTorch = true;
 const hasMap = false;
+const hasBowandArrow = true
+const hasCompass = true
 
-console.log("You see two paths: one leads to the mountains, the other to the village.");
-const choice = readline.question("Do you go to the 'mountains' or the 'village'?");
+console.log("You see four paths: one leads to the mountains, one leads to the village, one leads to the forest, the other to the next island.");
+const choice = readline.question("Do you go to the 'mountains', the 'village', the 'forest' or the 'island' ?");
 
 if (choice === "mountains" && hasTorch) {
   console.log("You safely navigate through the dark mountains.");
@@ -38,10 +40,13 @@ if (choice === "mountains" && hasTorch) {
   console.log("It's too dark to proceed. You decide to turn back.");
 } else if (choice === "village" || hasMap) {
   console.log("You find your way to the village.");
-} else {
-  console.log("You get lost and wander aimlessly.");
+} else if (choice === "forest" && hasBowandArrow) {
+       if (choice === "forest" && hasCompass) {
+  console.log("You safely navigate through the dangerous forest.");
+} else if (choice === "boat" || hasMap) {
+  console.log("You travel to the next island on a boat.")
 }
-
+}
 /* 
 
 Add Customization and expand the game:
